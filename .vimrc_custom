@@ -1,0 +1,51 @@
+syntax on
+set number numberwidth=2
+set wrap!
+noremap map <space> viw
+noremap map <c-d> d
+noremap map - ddo<esc>p
+
+noremap nmap \ dd
+vmap \ U
+imap <c-d> <esc>ddi
+imap <c-u> <esc>viwU$a
+
+noremap nmap - dd
+noremap nmap \ -
+noremap nmap dd O<esc>jddk
+
+let mapleader = ","
+nnoremap <leader>d dd
+nnoremap <leader>c ddO
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+iabbrev @@ yhoshino11@gmail.com
+iabbrev ccopy Copyright 2015 Yu Hoshino, all rights reserved.
+iabbrev cfooter -- <cr>Yu Hoshino<cr>yhoshino11@gmail.com<cr>Copyright 2015 Yu Hoshino, all rights reserved.
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lela
+
+noremap <leader>) viw<esc>a)<esc>hbi(<esc>lel
+nnoremap <leader>) viw<esc>bi(<esc>lea)
+
+imap <c-i> <esc>
+nnoremap H 0
+nnoremap L $
+nnoremap J G
+nnoremap K gg
+noremap inoremap jk <esc>l
+
+noremap <leader><leader> :w<return>
+noremap <leader><leader><leader> :wq<return>
+
+
+noremap autocmd BufNewFile *.txt :write
+noremap autocmd BufWritePre,BufRead *.html :normal gg=G
+noremap autocmd BufWritePre,BufRead *.html setlocal nowrap
+noremap autocmd FileType python nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType ruby     :imap ( ()<left>
+autocmd FileType ruby     :inoremap ' ''<left>
+autocmd FileType ruby     :inoremap " ""<left>
+
+nnoremap )y 0v$yo<esc>p
