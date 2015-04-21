@@ -1,7 +1,10 @@
 augroup filetype_ruby
   autocmd!
-  autocmd FileType ruby     :inoremap ( ()<left>
-  autocmd FileType ruby     :inoremap { {  }<left><left>
-  autocmd FileType ruby     :inoremap ' ''<left>
-  autocmd FileType ruby     :inoremap " ""<left>
+  autocmd Filetype ruby call RubyOptions()
+  function RubyOptions()
+    :inoremap ( ()<left>
+    :inoremap { { }<left><left>
+    :inoremap ' ''<left>
+    :inoremap " ""<left>
+  endfunction
 augroup END
