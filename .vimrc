@@ -1,2 +1,2 @@
-source $HOME/.dotfiles/.vimrc_custom
-noremap source $HOME/.dotfiles/.vimrc_ruby " from http://vim-bootstrap.com/
+so $HOME/.dotfiles/custom.vim
+" source $HOME/.dotfiles/.vimrc_ruby " from http://vim-bootstrap.com/
