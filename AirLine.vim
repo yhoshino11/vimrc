@@ -6,6 +6,7 @@ set term=xterm-256color
 set termencoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'airlineish'
 let g:bufferline_echo = 0
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode',' ','branch'])

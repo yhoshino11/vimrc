@@ -23,7 +23,7 @@ set shortmess+=I
 set tabstop=2
 set shiftwidth=2
 set softtabstop=0
-"set expandtab
+set expandtab
 
 set ignorecase
 set wrapscan

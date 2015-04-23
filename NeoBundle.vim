@@ -30,8 +30,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'rking/ag.vim'
@@ -50,6 +48,12 @@ NeoBundle 'tpope/vim-rake'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'zenorocha/dracula-theme'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Keithbsmiley/rspec.vim'
 
 
 " You can specify revision/branch/tag.
