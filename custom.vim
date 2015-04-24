@@ -22,7 +22,23 @@ so $HOME/.dotfiles/Color.vim
 
 so $HOME/.dotfiles/RelativeNumber.vim
 
-" Trigger configuration. Do not use <tab> if you use
-" let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:rsenseUseOmniFunc = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+let g:quickrun_config = { '_' : { 'split':'vertical','close_on_empty':1,'runner':'vimproc'}}
+set splitright
+
+nnoremap <c-q> :QuickRun<cr>
+
+" RSpec.vim mappings
+map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>A :call RunAllSpecs()<CR>
+
+"let g:rspec_command = "!rspec --drb {spec}"
+"let g:rspec_command = "Dispatch rspec {spec}"
+"let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}""

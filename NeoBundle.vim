@@ -54,6 +54,22 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Keithbsmiley/rspec.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix': 'make -f make_unix.mak'
+      \    },
+      \ }
+NeoBundle 'thinca/vim-quickrun'
+NeoBundleLazy 'marcus/rsense', {
+      \ 'autoload': {
+      \   'filetypes': 'ruby',
+      \ },
+      \ }
+NeoBundle 'supermomonga/neocomplete-rsense.vim', {
+      \ 'depends': ['Shougo/neocomplete.vim', 'marcus/rsense'],
+      \ }
+NeoBundle 'benmills/vimux'
 
 
 " You can specify revision/branch/tag.
