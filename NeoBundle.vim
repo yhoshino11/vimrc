@@ -15,63 +15,100 @@ call neobundle#begin(expand('/Users/yuhoshino/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Add or remove your Bundles here:
+" Visual
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'zenorocha/dracula-theme'
+
+" Snippets
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-
-" CUSTOM PLUGINS
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/neocomplete'
+
+" Git
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+NeoBundle 'gregsexton/gitv'
+
+" Editing
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'ntpeters/vim-better-whitespace'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 't9md/vim-ruby-xmpfilter'
-NeoBundle 'osyo-manga/vim-monster'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'szw/vim-tags'
+" NeoBundle 'alpaca-tc/alpaca_tags'
+NeoBundle 'alpaca-tc/alpaca_tags', {
+    \ 'depends'  : ['Shougo/vimproc.vim',  'Shougo/unite.vim'],
+    \ 'autoload' : {
+    \   'commands'      : ['Tags',  'TagsUpdate',  'TagsSet',  'TagsBundle',  'TagsCleanCache'],
+    \   'unite_sources' : ['tags']
+    \ }
+    \ }
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'AndrewRadev/switch.vim'
+
+" Search
+NeoBundle 'rking/ag.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'Shougo/unite.vim'
+
+" Ruby References
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
+
+" Ruby / Rails / RSpec
+NeoBundle 'vim-scripts/ruby-matchit'
+NeoBundle 'osyo-manga/vim-monster'
+NeoBundle 't9md/vim-ruby-xmpfilter'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'Keithbsmiley/rspec.vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'zenorocha/dracula-theme'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Keithbsmiley/rspec.vim'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundleLazy 'thoughtbot/vim-rspec', {
+      \ 'depends'  : 'tpope/vim-dispatch',
+      \ 'autoload' : { 'filetypes' : ['ruby'] }
+      \ }
+NeoBundleLazy 'marcus/rsense', {
+      \ 'autoload': { 'filetypes': ['ruby'] }
+      \ }
+NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
+      \ 'depends': ['Shougo/neocomplete.vim', 'marcus/rsense'],
+      \ 'autoload': { 'filetypes': ['ruby'] }
+      \ }
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'mac' : 'make -f make_mac.mak',
       \     'unix': 'make -f make_unix.mak'
-      \    },
+      \    }
       \ }
-NeoBundle 'thinca/vim-quickrun'
-NeoBundleLazy 'marcus/rsense', {
-      \ 'autoload': {
-      \   'filetypes': 'ruby',
-      \ },
-      \ }
-NeoBundle 'supermomonga/neocomplete-rsense.vim', {
-      \ 'depends': ['Shougo/neocomplete.vim', 'marcus/rsense'],
-      \ }
-NeoBundle 'benmills/vimux'
-NeoBundle 'vim-scripts/AnsiEsc.vim'
 
+" Tmux
+NeoBundle 'benmills/vimux'
+
+" Python
+NeoBundleLazy "davidhalter/jedi-vim", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"],
+      \ },
+      \ "build": {
+      \   "mac": "pip install jedi",
+      \   "unix": "pip install jedi",
+      \ }}
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+      \ 'depends': ['davidhalter/jedi-vim'],
+      \ 'autoload': {
+      \   'filetypes': ['python', 'python3'],
+      \ }}
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }

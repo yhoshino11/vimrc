@@ -17,7 +17,7 @@ endfun
 augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-  autocmd BufWinEnter,BufNewFile *_spec.rb nnoremap <c-l> :call QRunRspecCurrentLine()<CR>
+  " autocmd BufWinEnter,BufNewFile *_spec.rb nnoremap Ctrl-V + ";" :call QRunRspecCurrentLine()<CR>
 augroup END
 
 set splitright
