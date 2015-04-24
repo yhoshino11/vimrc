@@ -30,8 +30,11 @@ set wrapscan
 
 set hlsearch
 
-set number
+
 set numberwidth=2
 set nowrap
 
 set laststatus=2
+
+set autoindent
+set smartindent

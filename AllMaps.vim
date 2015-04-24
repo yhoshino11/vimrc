@@ -1,6 +1,5 @@
 nmap - dd
-nmap <space>u viwU
-nmap <space>l viwu
+nmap t viw
 
 nmap <leader>y 0v$y
 nmap <leader>p o<esc>p

@@ -70,6 +70,7 @@ NeoBundle 'supermomonga/neocomplete-rsense.vim', {
       \ 'depends': ['Shougo/neocomplete.vim', 'marcus/rsense'],
       \ }
 NeoBundle 'benmills/vimux'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 
 " You can specify revision/branch/tag.

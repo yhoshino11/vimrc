@@ -19,26 +19,43 @@ so $HOME/.dotfiles/MultiCursor.vim
 so $HOME/.dotfiles/AirLine.vim
 so $HOME/.dotfiles/Syntastic.vim
 so $HOME/.dotfiles/Color.vim
+so $HOME/.dotfiles/Rsense.vim
+so $HOME/.dotfiles/QuickRun.vim
+so $HOME/.dotfiles/RSpec.vim
+so $HOME/.dotfiles/GitGutter.vim
+so $HOME/.dotfiles/Gist.vim
 
 so $HOME/.dotfiles/RelativeNumber.vim
 
-let g:rsenseUseOmniFunc = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let ruby_operators = 1
+let ruby_space_errors = 1
+let ruby_fold = 1
+let ruby_spellcheck_strings = 1
+autocmd FileType ruby   setlocal foldmethod=syntax
+autocmd FileType python setlocal foldmethod=indent
+nnoremap <space> za
 
-let g:quickrun_config = { '_' : { 'split':'vertical','close_on_empty':1,'runner':'vimproc'}}
-set splitright
+" set foldlevel=1
+" set foldnestmax=2
 
-nnoremap <c-q> :QuickRun<cr>
+" augroup foldmethod-syntax
+  " autocmd!
+  " autocmd InsertEnter * if &l:foldmethod ==# 'syntax'
+  " \                   |   setlocal foldmethod=manual
+  " \                   | endif
+  " autocmd InsertLeave * if &l:foldmethod ==# 'manual'
+  " \                   |   setlocal foldmethod=syntax
+  " \                   | endif
+" augroup END
 
-" RSpec.vim mappings
-map <Leader>c :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>A :call RunAllSpecs()<CR>
+" set foldenable
+" set foldmethod=syntax
 
-"let g:rspec_command = "!rspec --drb {spec}"
-"let g:rspec_command = "Dispatch rspec {spec}"
-"let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}""
+" autocmd InsertEnter * if !exists('w:last_fdm')
+            " \| let w:last_fdm=&foldmethod
+            " \| setlocal foldmethod=manual
+            " \| endif
+" autocmd InsertLeave,WinLeave * if exists('w:last_fdm')
+            " \| let &l:foldmethod=w:last_fdm
+            " \| unlet w:last_fdm
+            " \| endif
