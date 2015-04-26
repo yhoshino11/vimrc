@@ -1,7 +1,8 @@
-let g:quickrun_config                   = {}
-let g:quickrun_config['split']          = 'vertical'
-let g:quickrun_config['close_on_empty'] = 1
-let g:quickrun_config['runner']         = 'vimproc'
+let g:quickrun_config                              = {}
+let g:quickrun_config['split']                     = 'vertical'
+let g:quickrun_config['close_on_empty']            = 1
+let g:quickrun_config['runner']                    = 'vimproc'
+let g:quickrun_config['runner/vimproc/updatetime'] = 40
 
 let g:quickrun_config['ruby.rspec'] = {
       \ 'command' :  'rspec',
